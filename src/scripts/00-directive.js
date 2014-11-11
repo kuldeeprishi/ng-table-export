@@ -5,7 +5,7 @@ angular.module('ngTableExport', [])
 }])
 .directive('exportCsv', ['$parse', '$timeout', function ($parse, $timeout) {
 
-  var delimiter = '\t';
+  var delimiter = ';';
   var header = 'data:text/csv;charset=UTF-8,';
 
   return {
@@ -55,7 +55,7 @@ angular.module('ngTableExport', [])
               data += rowData + '\n';
             });
             // add delimiter hint for excel so it opens without having to import
-            data = 'sep=' + delimiter + '\n' + data;
+            //data = 'sep=' + delimiter + '\n' + data;
           }
 
           /**
